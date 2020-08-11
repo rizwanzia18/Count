@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         textview = findViewById(R.id.textView);
         textview2= findViewById(R.id.textView3);
         increasebtn = findViewById(R.id.bti);
-        resetbtn = findViewById(R.id.btr);
         mPreferences = getSharedPreferences(sharedCounter, MODE_PRIVATE);
         m = mPreferences.getInt(COUNT_KEY, 0);
        // t = mPreferences.getString(T_KEY, String.valueOf(0));
@@ -57,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
         Typeface tf = Typeface.createFromAsset(getAssets(),
                 "fonts/2.ttf");
         TextView tv = (TextView) findViewById(R.id.textView);
+        TextView tg = (TextView) findViewById(R.id.textView3);
         tv.setTypeface(tf);
+        tg.setTypeface(tf);
 
 
         increasebtn.setOnClickListener(new View.OnClickListener() {
