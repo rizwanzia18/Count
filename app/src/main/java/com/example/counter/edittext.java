@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,11 @@ public class edittext extends AppCompatActivity {
         editText =findViewById(R.id.etn);
         button = findViewById(R.id.button);
         targetview = findViewById(R.id.tgtview);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(),
+                "fonts/2.ttf");
+        TextView tv = (TextView) findViewById(R.id.etn);
+        tv.setTypeface(tf);
         //mPreferences = getSharedPreferences(sharedCounter, MODE_PRIVATE);
        // target = mPreferences.getString(TARGET_KEY, target);
         //Toast.makeText(edittext.this, target, Toast.LENGTH_SHORT).show();

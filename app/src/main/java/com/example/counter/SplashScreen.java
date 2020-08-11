@@ -28,6 +28,8 @@ public class SplashScreen extends AppCompatActivity {
 
 
 
+
+
     }
     private class LogoLauncher extends Thread{
         public void run(){

@@ -23,8 +23,8 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="167dp"
+        android:layout_height="83dp"
         android:text="OK"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,11 +33,11 @@
 
     <TextView
         android:id="@+id/tgtview"
-        android:layout_width="226dp"
-        android:layout_height="85dp"
+        android:layout_width="253dp"
+        android:layout_height="81dp"
         android:layout_marginTop="52dp"
         android:gravity="center"
-        android:text="Target value "
+        android:text="TARGET VALUE"
         android:textSize="33sp"
         app:layout_constraintBottom_toTopOf="@+id/etn"
         app:layout_constraintEnd_toEndOf="parent"

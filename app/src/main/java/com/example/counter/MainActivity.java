@@ -146,6 +146,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void onReset() {
         m =0;
+        target = String.valueOf(0);
+        textview2.setText(target);
         textview.setText(m.toString());
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
         preferencesEditor.clear();
@@ -163,6 +165,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetTextView(View view) {
         m = 0;
+        target = String.valueOf(0);
+        textview2.setText(target);
         textview.setText(m.toString());
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
         preferencesEditor.clear();
