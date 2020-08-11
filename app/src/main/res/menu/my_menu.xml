@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Reset Button"
+        android:id="@+id/rst"
+        android:icon="@drawable/sr"
+        app:showAsAction="ifRoom"
+        />
+
     <item
         android:title="Tasbih"
         android:id="@+id/book"
@@ -11,15 +19,13 @@
         android:title="Decrement value"
         android:id="@+id/dc" />
     <item
+        android:title="Set Target Value"
+        android:id="@+id/tgt"/>
+
+    <item
         android:title="About"
         android:id="@+id/abt"/>
-    <item
-        android:title="Reset Button"
-        android:id="@+id/rst"
-        android:checkable="true"/>
-    <item
-        android:title="Settings"
-        android:id="@+id/settings"/>
+
     <item
         android:title="Exit"
         android:id="@+id/exit" />
