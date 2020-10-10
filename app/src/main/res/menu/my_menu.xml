@@ -18,9 +18,10 @@
     <item
         android:title="Decrement value"
         android:id="@+id/dc" />
+
     <item
         android:title="Set Target Value"
-        android:id="@+id/tgt"/>
+        android:id="@+id/dialog"/>
 
     <item
         android:title="About"
