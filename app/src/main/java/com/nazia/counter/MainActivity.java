@@ -27,10 +27,11 @@ public class MainActivity extends AppCompatActivity {
     private TextView textview ,textview2;
     private Button increasebtn;
     private Button resetbtn;
-    private String target;
+    private Integer target ;
     private final String COUNT_KEY = "count";
+    private final String COUNT_TARGET = "target";
     final Context context = this;
-    Integer m = 0 ;
+    Integer m ;
     private SharedPreferences mPreferences;
     private String sharedCounter = "com.example.android.counter";
 
@@ -48,10 +49,11 @@ public class MainActivity extends AppCompatActivity {
         increasebtn = findViewById(R.id.bti);
         mPreferences = getSharedPreferences(sharedCounter, MODE_PRIVATE);
         m = mPreferences.getInt(COUNT_KEY, 0);
+        target = mPreferences.getInt(COUNT_TARGET,0);
 
 
         textview.setText(m.toString());
-
+        textview2.setText(target.toString());
 
 
         Typeface tf = Typeface.createFromAsset(getAssets(),
@@ -113,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                                 new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialogInterface, int i) {
+                                        target = Integer.valueOf(targetInput.getText().toString());
                                         textview2.setText(targetInput.getText().toString());
 
                                     }
@@ -179,10 +182,13 @@ public class MainActivity extends AppCompatActivity {
 
     private void onReset() {
         m =0;
-        target = String.valueOf(0);
-        textview2.setText(target);
+        target = 0;
+        textview2.setText(target.toString());
         textview.setText(m.toString());
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+/*        SharedPreferences.Editor targetEditor = nPreferences.edit();
+        targetEditor.clear();
+        targetEditor.apply();*/
         preferencesEditor.clear();
         preferencesEditor.apply();
 
@@ -198,8 +204,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void resetTextView(View view) {
         m = 0;
-        target = String.valueOf(0);
-        textview2.setText(target);
+        target = 0;
+        textview2.setText(target.toString());
         textview.setText(m.toString());
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
         preferencesEditor.clear();
@@ -211,8 +217,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         SharedPreferences.Editor preferencesEditor = mPreferences.edit();
+        preferencesEditor.putInt(COUNT_TARGET,target);
         preferencesEditor.putInt(COUNT_KEY, m);
         preferencesEditor.apply();
+
     }
 
 
